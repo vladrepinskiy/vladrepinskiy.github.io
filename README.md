@@ -1,4 +1,4 @@
-# Bun + React (static)
+# Personal Website with React and Bun
 
 This project is pared down to the bare minimum needed to build a static React site with Bun's bundler.
 
