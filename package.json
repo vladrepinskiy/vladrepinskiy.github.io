@@ -1,0 +1,33 @@
+{
+  "name": "bun-react-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot ./src/index.html",
+    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify",
+    "lint": "bun x eslint . --ext .ts,.tsx,.js,.jsx --report-unused-disable-directives",
+    "lint:fix": "bun x eslint . --ext .ts,.tsx,.js,.jsx --report-unused-disable-directives --fix",
+    "format": "bun x prettier . --write",
+    "format:check": "bun x prettier . --check"
+  },
+  "dependencies": {
+    "@linaria/core": "^6.3.0",
+    "@linaria/react": "^6.3.0",
+    "@wyw-in-js/babel-preset": "^0.8.0",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/bun": "latest",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.47.0"
+  }
+}
