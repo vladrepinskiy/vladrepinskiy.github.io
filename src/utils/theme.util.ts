@@ -6,8 +6,11 @@ import { DEFAULT_THEME, THEMES } from "@/constants/theme.constant";
 export const getInitialTheme = (): Theme => {
     const storedKey = getFromLocalStorage<string>("theme");
 
-    if (storedKey && storedKey in THEMES) {
-        return THEMES[storedKey as ThemeKey];
+    if (storedKey) {
+        const theme = Object.values(THEMES).find(theme => theme.key === storedKey);
+        if (theme) {
+            return theme;
+        }
     }
 
     return DEFAULT_THEME;
