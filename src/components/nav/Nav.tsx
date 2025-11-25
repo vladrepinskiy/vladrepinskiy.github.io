@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavThemeToggle } from "@/components/nav/NavThemeToggle";
 import { styled } from "goober";
 
@@ -5,9 +6,9 @@ export const Nav = () => {
   return (
     <NavBar>
       <NavLinks>
-        <NavLink href="#home">Home</NavLink>
-        <NavLink href="#work">Work</NavLink>
-        <NavLink href="#contact">Contact</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/cv">CV</NavLink>
+        <NavLink to="/lab">Lab</NavLink>
       </NavLinks>
       <NavThemeToggle />
     </NavBar>
@@ -33,7 +34,7 @@ const NavLinks = styled("div")`
   gap: 1.5rem;
 `;
 
-const NavLink = styled("a")`
+const NavLink = styled(Link)`
   font-family: var(--font-inconsolata);
   font-size: ${(props) => props.theme.fontSizes.xl};
   letter-spacing: 0.08em;

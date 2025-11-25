@@ -17,7 +17,8 @@
     "@wyw-in-js/babel-preset": "^0.8.0",
     "goober": "^2.1.18",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "wouter": "^3.8.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
