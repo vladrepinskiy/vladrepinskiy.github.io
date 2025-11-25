@@ -1,14 +1,24 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { NavThemeToggle } from "@/components/nav/NavThemeToggle";
 import { styled } from "goober";
 
 export const Nav = () => {
+  const [location] = useLocation();
+
+  const isActive = (path: string) => location === path;
+
   return (
     <NavBar>
       <NavLinks>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/cv">CV</NavLink>
-        <NavLink to="/lab">Lab</NavLink>
+        <NavLink to="/" data-active={isActive("/")}>
+          Home
+        </NavLink>
+        <NavLink to="/cv" data-active={isActive("/cv")}>
+          CV
+        </NavLink>
+        <NavLink to="/lab" data-active={isActive("/lab")}>
+          Lab
+        </NavLink>
       </NavLinks>
       <NavThemeToggle />
     </NavBar>
@@ -41,4 +51,9 @@ const NavLink = styled(Link)`
   color: ${(props) => props.theme.palette.text};
   padding-bottom: 0.2rem;
   text-decoration: none;
+  border-bottom: none;
+
+  &[data-active="true"] {
+    border-bottom: 2px solid ${(props) => props.theme.palette.text};
+  }
 `;
