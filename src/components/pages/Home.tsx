@@ -21,6 +21,11 @@ const Page = styled("div")`
   background: ${(props) => props.theme.palette.bg};
   color: ${(props) => props.theme.palette.text};
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 const Title = styled("h1")`
