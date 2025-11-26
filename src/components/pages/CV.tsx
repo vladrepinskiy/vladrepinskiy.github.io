@@ -1,10 +1,12 @@
 import { Nux } from "@/components/nux/Nux";
+import { WORK_EXPERIENCE } from "@/constants/cv.constant";
 import { styled } from "goober";
+import { CVEntryList } from "../cv/CVEntryList";
 
 export const CV = () => {
   return (
     <Page>
-      <Nux />
+      <CVEntryList entries={WORK_EXPERIENCE} />
     </Page>
   );
 };
@@ -18,6 +20,6 @@ const Page = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
 `;
