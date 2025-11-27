@@ -12,7 +12,7 @@ export const CV = () => {
 
 const Page = styled("div")`
   flex: 1;
-  padding: 4rem clamp(1.5rem, 4vw, 6rem);
+  padding: 8rem clamp(1.5rem, 4vw, 6rem);
   background: ${(props) => props.theme.palette.bg};
   color: ${(props) => props.theme.palette.text};
   overflow-y: auto;
