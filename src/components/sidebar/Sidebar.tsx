@@ -11,7 +11,6 @@ export const Sidebar = () => {
     <SidebarContainer>
       <TopSection>
         <NavSection>
-          <SectionTitle>Click Around</SectionTitle>
           <SidebarLinks>
             <SidebarLink to="/" $active={isActive("/")}>
               Home
@@ -28,7 +27,6 @@ export const Sidebar = () => {
           </SidebarLinks>
         </NavSection>
         <SocialSection>
-          <SectionTitle>Keep in Touch</SectionTitle>
           <SocialLinks>
             <SocialLink
               href="https://github.com/vladrepinskiy"
@@ -47,10 +45,8 @@ export const Sidebar = () => {
             <SocialLink href="mailto:vladrepinsky@gmail.com">Email</SocialLink>
           </SocialLinks>
         </SocialSection>
-      </TopSection>
-      <ThemeToggleWrapper>
         <SidebarThemeToggle />
-      </ThemeToggleWrapper>
+      </TopSection>
     </SidebarContainer>
   );
 };
@@ -58,7 +54,7 @@ export const Sidebar = () => {
 const SidebarContainer = styled("nav")`
   width: 260px;
   height: 100vh;
-  padding: 5rem 0 0 8rem;
+  padding: 8rem 0 0 8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -94,7 +90,6 @@ const SocialSection = styled("div")`
 const SectionTitle = styled("h3")`
   font-family: var(--font-inconsolata);
   font-size: ${(props) => props.theme.fontSizes.sm};
-  font-weight: 400;
   letter-spacing: 0.08em;
   color: ${(props) => props.theme.palette.textMuted};
   text-transform: uppercase;
@@ -110,7 +105,6 @@ const SidebarLinks = styled("div")`
 const SidebarLink = styled(Link)<{ $active: boolean }>`
   font-family: var(--font-inconsolata);
   font-size: ${(props) => props.theme.fontSizes.md};
-  font-weight: 600;
   letter-spacing: 0.08em;
   color: ${(props) =>
     props.$active ? props.theme.palette.text : props.theme.palette.textMuted};
@@ -136,7 +130,6 @@ const SocialLinks = styled("div")`
 const SocialLink = styled("a")`
   font-family: var(--font-inconsolata);
   font-size: ${(props) => props.theme.fontSizes.md};
-  font-weight: 600;
   letter-spacing: 0.08em;
   color: ${(props) => props.theme.palette.textMuted};
   padding: 0.1rem 0;

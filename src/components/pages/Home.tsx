@@ -1,16 +1,32 @@
 import { styled } from "goober";
+import { Title, Subtitle, Body } from "../core/Typography";
+import { Location } from "../location/Location";
 
 export const Home = () => {
   return (
     <Page>
-      <Title>Hello Stranger 👋</Title>
-      <Lead>
-        I'm a Fast-learning Full Stack Developer with a demonstrated history of
-        experience from across the industry - from pure CS research to
-        self-managed startup projects. Strong engineering culture with a Master
-        of Engineering degree from one of the leading European universities.
-        Love working on relationships, processes and documentation.
-      </Lead>
+      <Content>
+        <TitleWrapper>
+          <Title>Welcome Stranger!</Title>
+        </TitleWrapper>
+        <Subtitle>
+          Влад Репинский &nbsp;{" "}
+          <span style={{ opacity: 0.6 }}>[vlæd rɛpɪnskɪy]</span>
+        </Subtitle>
+        <Subtitle>est. 1998 in Saint Petersburg, Russia</Subtitle>
+        <Location />
+        <Body>
+          I'm a product engineer with a track record from across the industry -
+          from pure computer science research to self-managed startup projects.
+          Strong engineering culture with a Master of Engineering degree from
+          one of the leading European universities. Love working on
+          relationships, processes and documentation. Since recently, addicted
+          to building products.
+        </Body>
+        <Body>
+          Outside of work, inspired by art, the people that surround me.
+        </Body>
+      </Content>
     </Page>
   );
 };
@@ -25,18 +41,17 @@ const Page = styled("div")`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
 `;
 
-const Title = styled("h1")`
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  margin-bottom: 1rem;
+const Content = styled("div")`
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
 `;
 
-const Lead = styled("p")`
-  font-size: 1.2rem;
-  max-width: 42ch;
-  line-height: 1.6;
-  color: ${(props) => props.theme.palette.text};
-  opacity: 0.85;
+const TitleWrapper = styled("div")`
+  margin-bottom: 2rem;
 `;
