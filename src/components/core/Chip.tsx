@@ -5,7 +5,7 @@ export const Chip = ({ label }: { label: string }) => {
 };
 
 const ChipContainer = styled("div")`
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 9999px;
   background: ${(props) => props.theme.palette.bg};
   color: ${(props) => props.theme.palette.text};
