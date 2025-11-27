@@ -10,6 +10,7 @@ export const WORK_EXPERIENCE: CVEntry[] = [
       "Leveraged cutting-edge technologies to deliver robust, scalable solutions while driving continuous improvement and streamlining development workflows.",
     technologies: ["Technology 1", "Technology 2"],
     location: "Amsterdam, Netherlands",
+    link: "https://wafflelabs.com",
   },
   {
     startDate: "Aug 2023",
@@ -20,6 +21,7 @@ export const WORK_EXPERIENCE: CVEntry[] = [
       "Collaborated with cross-functional teams to design, implement, and optimize scalable software solutions.",
     technologies: ["Technology 3", "Technology 4"],
     location: "Frankfurt, Germany",
+    link: "https://nonsence.com",
   },
   {
     startDate: "Apr 2024",
@@ -30,5 +32,6 @@ export const WORK_EXPERIENCE: CVEntry[] = [
       "Assisted in the development of software solutions while gaining valuable experience in a professional setting.",
     technologies: ["Technology 5", "Technology 6"],
     location: "Limbo, Neverland",
+    link: "https://megasoft.com",
   },
 ];

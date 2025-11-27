@@ -16,7 +16,7 @@ export const Collapsible = ({
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
   return (
-    <Container>
+    <>
       <Toggle onClick={() => setIsExpanded(!isExpanded)}>
         <span>{label}</span>
         <Triangle $isExpanded={isExpanded}>▶</Triangle>
@@ -24,18 +24,15 @@ export const Collapsible = ({
       <Content $isExpanded={isExpanded}>
         <ContentInner>{children}</ContentInner>
       </Content>
-    </Container>
+    </>
   );
 };
-
-const Container = styled("div")`
-  margin-top: 1rem;
-`;
 
 const Toggle = styled("div")`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: fit-content;
   font-size: ${(props) => props.theme.fontSizes.md};
   color: ${(props) => props.theme.palette.text};
   opacity: 0.8;

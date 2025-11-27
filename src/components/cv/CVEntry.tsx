@@ -1,5 +1,6 @@
 import type { CVEntry } from "@/types/cv.types";
 import { styled } from "goober";
+import { Link } from "../core/Link";
 import { CVEntryStack } from "./CvEntryStack";
 
 export const CvEntry = ({ entry }: { entry: CVEntry }) => {
@@ -12,12 +13,16 @@ export const CvEntry = ({ entry }: { entry: CVEntry }) => {
         {entry.startDate} - {entry.endDate} • {entry.location}
       </Subtitle>
       <Body>{entry.description}</Body>
+      {entry.link && <Link url={entry.link} />}
       <CVEntryStack stack={entry.technologies} />
     </Container>
   );
 };
 
 const Container = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 1rem;
   background: ${(props) => props.theme.palette.bg};
   border-radius: 8px;
@@ -28,13 +33,11 @@ const Container = styled("div")`
 const Heading = styled("h3")`
   font-size: ${(props) => props.theme.fontSizes.xl};
   font-weight: 600;
-  margin: 0 0 0.5rem 0;
   color: ${(props) => props.theme.palette.text};
 `;
 
 const Subtitle = styled("p")`
   font-size: ${(props) => props.theme.fontSizes.md};
-  margin: 0 0 1rem 0;
   color: ${(props) => props.theme.palette.text};
   opacity: 0.7;
 `;
@@ -42,6 +45,5 @@ const Subtitle = styled("p")`
 const Body = styled("p")`
   font-size: ${(props) => props.theme.fontSizes.md};
   line-height: 1.6;
-  margin: 0;
   color: ${(props) => props.theme.palette.text};
 `;
