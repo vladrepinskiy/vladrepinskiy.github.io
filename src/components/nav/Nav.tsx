@@ -36,7 +36,7 @@ export const Nav = () => {
 const Sidebar = styled("nav")`
   width: 260px;
   height: 100vh;
-  padding: 2rem 1.5rem;
+  padding: 5rem 8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,25 +54,26 @@ const Sidebar = styled("nav")`
 const NavLinks = styled("div")`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 `;
 
 const NavLink = styled(Link)<{ $active: boolean }>`
   font-family: var(--font-inconsolata);
-  font-size: ${(props) => props.theme.fontSizes.xl};
+  font-size: ${(props) => props.theme.fontSizes.md};
+  font-weight: 600;
   letter-spacing: 0.08em;
-  color: ${(props) => props.theme.palette.text};
-  padding: 0.5rem 0;
-  padding-left: 0.5rem;
+  color: ${(props) =>
+    props.$active ? props.theme.palette.text : props.theme.palette.textMuted};
+  padding: 0.1rem 0;
   text-decoration: none;
-  border-left: ${(props) =>
-    props.$active
-      ? `3px solid ${props.theme.palette.text}`
-      : "3px solid transparent"};
-  transition: border-left 0.2s ease;
+  transform: ${(props) =>
+    props.$active ? "translateX(10px)" : "translateX(0)"};
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 
   &:hover {
-    border-left: 3px solid ${(props) => props.theme.palette.text};
+    transform: translateX(10px);
+    color: ${(props) => props.theme.palette.text};
   }
 `;
 
