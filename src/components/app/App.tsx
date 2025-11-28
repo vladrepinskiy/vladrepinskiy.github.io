@@ -6,6 +6,7 @@ import { CV } from "@/components/pages/CV";
 import { Lab } from "@/components/pages/Lab";
 import { About } from "../pages/About";
 import { RouteTransition } from "@/components/core/RouteTransition";
+import { EdgeBlur } from "@/components/core/EdgeBlur";
 
 const Routes = () => {
   const [location] = useLocation();
@@ -24,10 +25,12 @@ export const App = () => {
   return (
     <Router>
       <AppContainer>
+        <EdgeBlur direction="top" />
         <Sidebar />
         <ContentArea>
           <Routes />
         </ContentArea>
+        <EdgeBlur direction="bottom" />
       </AppContainer>
     </Router>
   );
@@ -53,45 +56,5 @@ const ContentArea = styled("div")`
 
   @media (max-width: 768px) {
     margin-left: 0;
-  }
-
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 260px;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(
-      to bottom,
-      ${(props) => props.theme.palette.bg} 0%,
-      transparent 100%
-    );
-    pointer-events: none;
-    z-index: 10;
-
-    @media (max-width: 768px) {
-      left: 0;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: fixed;
-    bottom: 0;
-    left: 260px;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(
-      to top,
-      ${(props) => props.theme.palette.bg} 0%,
-      transparent 100%
-    );
-    pointer-events: none;
-    z-index: 10;
-
-    @media (max-width: 768px) {
-      left: 0;
-    }
   }
 `;
