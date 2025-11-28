@@ -1,5 +1,6 @@
 import { styled } from "goober";
 import { Route, Router, useLocation } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 import { Home } from "@/components/pages/Home";
 import { CV } from "@/components/pages/CV";
@@ -23,7 +24,7 @@ const Routes = () => {
 
 export const App = () => {
   return (
-    <Router>
+    <Router hook={useHashLocation}>
       <AppContainer>
         <EdgeBlur direction="top" />
         <Sidebar />

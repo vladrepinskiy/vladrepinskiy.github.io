@@ -17,7 +17,9 @@ export const CvEntry = ({ entry }: { entry: CVEntry }) => {
         <Body key={index}>{paragraph}</Body>
       ))}
       {entry.link && <Link url={entry.link} />}
-      <CVEntryStack stack={entry.technologies} />
+      {entry.stack && entry.stack.length > 0 && (
+        <CVEntryStack stack={entry.stack} />
+      )}
     </Container>
   );
 };
