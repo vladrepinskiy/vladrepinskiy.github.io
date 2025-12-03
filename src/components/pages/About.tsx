@@ -25,7 +25,7 @@ export const About = () => {
             </StatItem>
             <StatItem>
               <StatLabel>JS Bundle Size:</StatLabel>
-              <StatValue>420 KB</StatValue>
+              <StatValue>430 KB</StatValue>
             </StatItem>
           </StatsGrid>
         </Section>
