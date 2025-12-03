@@ -64,13 +64,8 @@ const ContentArea = styled("div")`
   height: 100vh;
   overflow-y: auto;
   position: relative;
-  margin-left: 260px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: ${(props) => props.theme.palette.bg};
-
-  @media (max-width: 768px) {
-    margin-left: 0;
-  }
 `;

@@ -32,6 +32,7 @@ export const SidebarNavigation = () => {
 
   const handleParentClick = (path: string) => {
     setExpandedItem(expandedItem === path ? null : path);
+    setLocation(path);
   };
 
   const handleChildClick = (parentPath: string, hash: string) => {

@@ -1,40 +1,54 @@
-import { styled } from "goober";
-import { SidebarThemeToggle } from "@/components/sidebar/SidebarThemeToggle";
-import { SidebarNavigation } from "@/components/sidebar/SidebarNavigation";
+import { SidebarControls } from "@/components/sidebar/SidebarControls";
 import { SidebarLinks } from "@/components/sidebar/SidebarLinks";
+import { SidebarNavigation } from "@/components/sidebar/SidebarNavigation";
+import { styled } from "goober";
+import { Location } from "../location/Location";
 
 export const Sidebar = () => {
   return (
     <SidebarContainer>
-      <TopSection>
-        <SidebarNavigation />
-        <SidebarLinks />
-        <SidebarThemeToggle />
-      </TopSection>
+      <SidebarContent>
+        <TopSection>
+          <SidebarNavigation />
+          <SidebarLinks />
+        </TopSection>
+        <BottomSection>
+          <SidebarControls />
+        </BottomSection>
+      </SidebarContent>
     </SidebarContainer>
   );
 };
 
 const SidebarContainer = styled("nav")`
-  width: 260px;
+  width: 20%;
   height: 100vh;
-  padding: 8rem 0 0 8rem;
+  padding: 15vh 0 15vh 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: ${(props) => props.theme.palette.bg};
-  position: fixed;
-  left: 0;
-  top: 0;
   z-index: 100;
+`;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+const SidebarContent = styled("div")`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 const TopSection = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 4rem;
+`;
+
+const BottomSection = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
 `;
