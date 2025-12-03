@@ -3,6 +3,7 @@ import { Title, Heading, Subtitle, Body } from "../core/Typography";
 import { Chip } from "../core/Chip";
 import packageJson from "../../../package.json";
 import { Link } from "../core/Link";
+import { Page } from "../core/Page";
 
 export const About = () => {
   const dependencies = Object.keys(packageJson.dependencies);
@@ -67,18 +68,6 @@ export const About = () => {
     </Page>
   );
 };
-
-const Page = styled("div")`
-  flex: 1;
-  padding: 4rem clamp(1.5rem, 4vw, 6rem);
-  background: ${(props) => props.theme.palette.bg};
-  color: ${(props) => props.theme.palette.text};
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
 
 const Content = styled("div")`
   width: 100%;
